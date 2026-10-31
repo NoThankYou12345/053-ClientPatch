@@ -58,7 +58,7 @@ Check yours in the game folder with `certutil -hashfile WoWClient.exe SHA256`.
 
 ## How to install
 
-1. Download **WoW053_ClientPatch_v6.zip** from Releases and unpack it.
+1. Download **WoW053_ClientPatch.zip** from Releases and unpack it.
 2. Copy `patch.bat`, `patch.ps1` and `gmod.dll` into your WoW 0.5.3 folder (next to WoWClient.exe).
 3. Double-click `patch.bat`. It checks your file, keeps a backup
    (`WoWClient_before_patch.exe`), patches it and checks the result.
