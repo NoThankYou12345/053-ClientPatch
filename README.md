@@ -3,7 +3,7 @@
 An improved **WoWClient.exe for World of Warcraft 0.5.3 alpha** (build 3368, 2003),
 for players on alpha emulator servers such as those from The Alpha Project
 (alpha-core). Smoother frames, higher FPS, fewer lag spikes and stutters, crash
-fixes, a working login screen and no more freezing on exit on modern
+fixes and no more freezing on exit on modern
 Windows 10 and Windows 11 PCs, laptops and desktops, with Nvidia, AMD or Intel graphics.
 
 This repository contains **no game files**, only a small patch that turns the
