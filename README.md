@@ -10,7 +10,7 @@ This repository contains **no game files** – only a small patch (a few KB) tha
 turns the WoWClient.exe you already have into the enhanced one. Download it under
 **Releases** (WoW053_ClientPatch_v5.zip).
 
-## What is better than the original 0.5.3 client
+## What is improved from the original 0.5.3 client
 
 **Smoother and faster**
 - Smoother frames and higher frame rate: the original game clock moved in
