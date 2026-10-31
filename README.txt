@@ -1,73 +1,83 @@
-WoWClient.exe patch for World of Warcraft 0.5.3 (build 3368)
-============================================================
+# WoW 0.5.3 Alpha Client Patch – Enhanced WoWClient.exe (build 3368)
 
-This package contains no game files, only a small patch (about 1-2 KB) that is
-applied to the WoWClient.exe you already have. Two ways to apply it are
-included: an automatic patcher (patch.bat) and xdelta patches.
+An improved **WoWClient.exe for World of Warcraft 0.5.3 alpha** (build 3368, 2003),
+for players on alpha emulator servers such as those from The Alpha Project
+(alpha-core). Smoother frames, higher FPS, fewer lag spikes and stutters, crash
+fixes and no more freezing on exit – on modern Windows 10 and Windows 11 PCs,
+laptops and desktops, with Nvidia, AMD or Intel graphics.
 
-What it does
-------------
-- Smoother frames: the game clock moved in 15.6 ms steps, so frames were uneven
-  and every hitch was rounded up. It now runs smoothly between those steps.
-- Frame rate limit = the refresh rate of the monitor the game is on (follows the
-  window to another monitor), at most 144 fps.
-- Laptops with two graphics chips use the fast one (no effect on desktops).
-- 1 ms timer resolution: faster loading and shorter waits.
-- Much lower CPU/GPU use while the game is in the background; auto-run keeps
-  going when you alt-tab.
-- Quit, Alt+F4 and the X button close the game at once (no more freezing on exit).
-- Minimap correct inside buildings and caves.
-- UI scale 0.8 at start (the console command "scaleui" still works).
-- Free flying with .collision on servers that allow it, the Nvidia "_Tls"
-  startup error fix, crash fixes when loading maps and models, longer view
-  distance, more usable memory (these are included for the web archive client
-  too).
-- Read-only code section and a valid PE checksum.
+This repository contains **no game files** – only a small patch (a few KB) that
+turns the WoWClient.exe you already have into the enhanced one. Download it under
+**Releases** (WoW053_ClientPatch_v5.zip).
 
-Supported WoWClient.exe (all become the same file)
---------------------------------------------------
-0.5.3 client from the web archive  38F4E97F5750BE226E2559F905E5BFCC7E79AA0D4EC9D51F7D147F1F0F551F3C
-0.5.3 Repack v6 client             1799003AB8ADE8D1E700AB1757AB331656DD5616D0E1DE53A0B1740E7346F715
-earlier improved client (v1)       6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84
-Result after patching              E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878
+## What is better than the original 0.5.3 client
 
-To see which one you have, open a command prompt in the game folder and type:
-    certutil -hashfile WoWClient.exe SHA256
-The patched client needs gmod.dll in the game folder; both clients above
-already have it.
+**Smoother and faster**
+- Smoother frames and higher frame rate: the original game clock moved in
+  15.6 ms steps, so frames were uneven and the frame rate stayed around 64 fps.
+- 1 ms timer resolution: shorter waits and faster loading.
+- Fewer stutters and lag spikes when running into new areas: the game data is
+  read into memory in the background right after start (lowest priority, at most
+  half of the free memory). Helps most on hard disks and USB drives.
+- Saving key bindings and addon settings no longer freezes the game.
+- Much lower CPU and GPU use while the game is in the background.
 
-Option 1: automatic patcher (recommended)
------------------------------------------
-1. Copy patch.bat and patch.ps1 into the game folder (next to WoWClient.exe).
-2. Double-click patch.bat.
-   It checks which WoWClient.exe you have, saves a backup
-   (WoWClient_before_patch.exe), patches it and checks the result.
-   An unknown file is never changed; its SHA256 is shown instead.
-If Windows blocks the files: right-click each file > Properties > Unblock.
+**Stable**
+- No more "Not responding" when you quit: the client always closes.
+- Quit, Alt+F4 and the X button close the game at once.
+- Crash fixes when loading maps and models.
+- Fix for the "_Tls" startup error with Nvidia drivers.
+- More usable memory (up to 4 GB instead of 2 GB, Large Address Aware).
 
-Option 2: xdelta
-----------------
-Use the file in the xdelta folder that matches your WoWClient.exe:
-    web-archive_to_patched.xdelta          web archive client
-    repack-v6_to_patched.xdelta            Repack v6 client
-    earlier-improved-v1_to_patched.xdelta  earlier improved client (v1)
-With a patch program that reads xdelta/VCDIFF files (for example xdelta UI or
-Delta Patcher): source file = your WoWClient.exe, patch = the .xdelta file.
-With xdelta3 on the command line, in the game folder:
-    xdelta3 -d -s WoWClient.exe web-archive_to_patched.xdelta WoWClient_patched.exe
-Then rename WoWClient.exe to WoWClient_before_patch.exe and
-WoWClient_patched.exe to WoWClient.exe. Check the result with certutil (see
-above): it must be E2DE2B60...8878.
+**Convenient**
+- Laptops with two graphics chips (Nvidia Optimus, AMD switchable) use the fast one.
+- Auto-run keeps going when you alt-tab.
+- Buildings are always drawn, also far away.
+- Free flying with .collision on servers that allow it.
+- UI scale 0.8 at start.
 
-Undo
-----
-Delete WoWClient.exe and rename WoWClient_before_patch.exe to WoWClient.exe.
+**Clean**
+- Read-only program code and a valid checksum.
+- Runs without extra programs (no dgVoodoo needed on the computers tested).
 
-Optional: dgVoodoo.conf (for clients with dgVoodoo2, e.g. the Repack)
----------------------------------------------------------------------
-optional\dgVoodoo.conf is the Repack's dgVoodoo2 settings file with two changes:
-- [DirectX] Resolution = unforced (the Repack forces 1600x1200, which moves the
-  mouse position on the world map; zone highlight and clicks land wrong).
-- ForceVerticalSync = false, so the frame rate limit above paces the frames.
-  Set it back to true if you prefer V-Sync.
-Copy it over the dgVoodoo.conf in the game folder if you want these changes.
+## Supported clients
+
+The patcher recognises these WoWClient.exe files and turns all of them into the
+same enhanced file (SHA256 `F7DC14C4A4CB293B12A16892C8CF032B0467C727E9E1329A5EF3EF272590B93E`):
+
+| Client | SHA256 |
+|---|---|
+| untouched Blizzard WoW 0.5.3 client | `861875776CE14A05FB49D4BB09F673D8A8939E2753372C3673AE6D43AC1A1C1F` |
+| WoW 0.5.3 alpha client from the web archive (archive.org) | `38F4E97F5750BE226E2559F905E5BFCC7E79AA0D4EC9D51F7D147F1F0F551F3C` |
+| WoW 0.5.3 Repack v6 | `1799003AB8ADE8D1E700AB1757AB331656DD5616D0E1DE53A0B1740E7346F715` |
+| earlier improved client (v1) | `6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84` |
+| patch v3 (update) | `E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878` |
+
+Check yours in the game folder with `certutil -hashfile WoWClient.exe SHA256`.
+
+**gmod.dll is needed.** gmod.dll (by rajkosto) is included with permission. It adds the account name
+and password fields to the login screen - without it you cannot log in to
+0.5.3 servers, patched or not. The patcher copies it next to WoWClient.exe if
+it is missing; an existing gmod.dll is never replaced.
+
+## How to install
+
+1. Download **WoW053_ClientPatch_v5.zip** from Releases and unpack it.
+2. Copy `patch.bat`, `patch.ps1` and `gmod.dll` into your WoW 0.5.3 folder (next to WoWClient.exe).
+3. Double-click `patch.bat`. It checks your file, keeps a backup
+   (`WoWClient_before_patch.exe`), patches it and checks the result.
+
+Or use the matching `.xdelta` file with xdelta UI, Delta Patcher or xdelta3.
+Full instructions, undo and details are in `README.txt`.
+
+## Graphics problems or low FPS?
+
+The enhanced client runs without dgVoodoo2. Some graphics cards and drivers
+(Nvidia and AMD in particular) have had problems with this old game, so if you
+see graphics errors, flickering, crashes or a low frame rate, try dgVoodoo2 with
+the included `optional/dgVoodoo.conf` (see `README.txt`).
+
+## Servers and community
+
+Host your own 0.5.3 server with The Alpha Project: https://github.com/The-Alpha-Project/
+Find servers and players in the community Discord: https://discord.gg/RzBMAKU
