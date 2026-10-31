@@ -73,7 +73,7 @@ Full instructions, undo and details are in `README.txt`.
 ## Graphics problems or low FPS?
 
 The enhanced client runs without dgVoodoo2. Some graphics cards and drivers
-(Nvidia and AMD in particular) have had problems with this old game, so if you
+(Nvidia in particular) have had problems with this old game, so if you
 see graphics errors, flickering, crashes or a low frame rate, try dgVoodoo2 with
 the included `optional/dgVoodoo.conf` (see `README.txt`).
 
