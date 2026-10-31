@@ -79,5 +79,5 @@ the included `optional/dgVoodoo.conf` (see `README.txt`).
 
 ## Servers and community
 
-Host your own 0.5.3 server with The Alpha Project: https://github.com/The-Alpha-Project/
-Find servers and players in the community Discord: https://discord.gg/RzBMAKU
+- Host your own 0.5.3 server with The Alpha Project: https://github.com/The-Alpha-Project/
+- Find servers and players in the community Discord: https://discord.gg/RzBMAKU
