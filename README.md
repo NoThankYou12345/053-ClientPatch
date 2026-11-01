@@ -1,4 +1,4 @@
-# WoW 0.5.3 Alpha Client Patch Enhanced WoWClient.exe (build 3368)
+# WoW 0.5.3 Alpha Client Enhanced Patch for WoWClient.exe (build 3368)
 
 An improved **WoWClient.exe for World of Warcraft 0.5.3 alpha** (build 3368, 2003),
 for players on alpha emulator servers such as those from The Alpha Project
