@@ -1,6 +1,6 @@
 # WoW 0.5.3 Alpha Client Enhanced Patch for WoWClient.exe (build 3368)
 
-An improved **WoWClient.exe for World of Warcraft 0.5.3 alpha** (build 3368, 2003),
+An improved **WoWClient.exe patch for World of Warcraft 0.5.3 alpha** (build 3368, 2003),
 for players on alpha emulator servers such as those from The Alpha Project
 (alpha-core). Smoother frames, higher FPS, fewer lag spikes and stutters, crash
 fixes and no more freezing on exit on modern
@@ -51,8 +51,8 @@ same enhanced file (SHA256 `94036EFFB22A19D0DA9B3A493AA77B4A865CE3ADBD225180D5E6
 | Untouched Blizzard WoW 0.5.3 client | `861875776CE14A05FB49D4BB09F673D8A8939E2753372C3673AE6D43AC1A1C1F` |
 | WoW 0.5.3 alpha client from the web archive (archive.org) | `38F4E97F5750BE226E2559F905E5BFCC7E79AA0D4EC9D51F7D147F1F0F551F3C` |
 | WoW 0.5.3 Repack | `1799003AB8ADE8D1E700AB1757AB331656DD5616D0E1DE53A0B1740E7346F715` |
-| Earlier improved client | `6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84` |
-| Enhanced patch 5 | `E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878` |
+| Another 0.5.3 Repack | `6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84` |
+| Previous Enhanced Patch | `E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878` |
 
 Check yours in the game folder with `certutil -hashfile WoWClient.exe SHA256`.
 
@@ -64,7 +64,7 @@ Check yours in the game folder with `certutil -hashfile WoWClient.exe SHA256`.
    (`WoWClient_before_patch.exe`), patches it and checks the result.
 
 Or use the matching `.xdelta` file with xdelta UI, Delta Patcher or xdelta3.
-Full instructions, undo and details are in `README.txt`.
+Full instructions, undo and details are in `ClientPatch_README.txt`.
 
 **gmod.dll is needed.** gmod.dll (by rajkosto) is included with permission. It sends
 the account name and password from the login screen to the server – without it
