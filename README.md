@@ -8,7 +8,7 @@ Windows 10 and Windows 11 PCs, laptops and desktops, with Nvidia, AMD or Intel g
 
 This repository contains **no game files**, only a small patch that turns the
 WoWClient.exe you already have into the enhanced one. Download it under
-**Releases** (WoW053_ClientPatch_v6.zip).
+**Releases** (WoW053_ClientPatch.zip).
 
 ## What is improved from the original 0.5.3 client
 
@@ -74,11 +74,10 @@ WoWClient.exe if it is missing; an existing gmod.dll is never replaced.
 ## Laggy game or graphics errors? Use dgVoodoo2
 
 On many computers the game runs much smoother with dgVoodoo2. The zip includes
-the two files needed: copy `D3D9.dll` and `dgVoodoo.conf` from the `dgVoodoo2`
-folder into the game folder. To go back, delete `D3D9.dll`.
+the two files needed: copy `D3D9.dll` and `dgVoodoo.conf` from the `WoW053_ClientPatch.zip`
+into the game folder. To go back, delete `D3D9.dll`.
 
-The included `dgVoodoo.conf` already has `Mipmapping = autogen_bilinear`, which
-fixes pink or purple edges on objects in the distance.
+The included `dgVoodoo.conf` has the included settings that worked best for me.
 
 dgVoodoo2 is made by Dege: https://dege.freeweb.hu/ – all rights belong to him.
 
