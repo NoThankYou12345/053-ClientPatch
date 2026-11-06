@@ -268,7 +268,7 @@ $Known = @{
         )
     }
     "EC4347715EC31BD3C67DEC98D17530F079E0374613D8A1A73F99B0893321F6D9" = @{
-        Name = "0.5.3 client from The Alpha Project Discord"
+        Name = "WoWClient.exe from discord"
         Size = 5005364
         Result = "767F08B7F62F7618FCB3AB401028701E122B3078A28C5DAD33B3BE43E4EAEA7C"
         Append = 28620

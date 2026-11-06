@@ -81,8 +81,8 @@ With xdelta3 on the command line, in the game folder:
 Then rename WoWClient.exe to WoWClient_before_patch.exe and
 WoWClient_patched.exe to WoWClient.exe. Check the result with certutil (see
 below): it must be 767F08B7...EAEA7C.
-Two more clients (earlier improved client v1, patched with patch v3) and the
-Alpha Project Discord client are supported by the automatic patcher
+Two more clients (earlier improved client v1, patched with patch v3) and
+WoWClient.exe from discord are supported by the automatic patcher
 (Option 1) but do not yet have an xdelta file here - use Option 1 for those.
 
 Undo
@@ -97,7 +97,7 @@ untouched Blizzard 0.5.3 client        861875776CE14A05FB49D4BB09F673D8A8939E275
 earlier improved client (v1)          6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84
 patched with patch v3 (update)        E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878
 first v5 release                      F7DC14C4A4CB293B12A16892C8CF032B0467C727E9E1329A5EF3EF272590B93E
-The Alpha Project Discord client      EC4347715EC31BD3C67DEC98D17530F079E0374613D8A1A73F99B0893321F6D9
+WoWClient.exe from discord      EC4347715EC31BD3C67DEC98D17530F079E0374613D8A1A73F99B0893321F6D9
 unidentified client variant 1         77868439C6FE23A98E572FBD5196D28C543CFB6D0B0E6E5035D00E24E030CA6A
 unidentified client variant 2         0B7E4526BFF2428C74F0A9146502E847BE3484D7856B89BBC31DFB6A97D539B2
 Result after patching                 767F08B7F62F7618FCB3AB401028701E122B3078A28C5DAD33B3BE43E4EAEA7C
