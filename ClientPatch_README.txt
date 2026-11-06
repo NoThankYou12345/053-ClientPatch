@@ -41,20 +41,8 @@ Convenient
 
 Clean
 - The program code is read-only and the file has a valid checksum.
-
-Supported WoWClient.exe (all become the same file)
---------------------------------------------------
-untouched Blizzard 0.5.3 client     861875776CE14A05FB49D4BB09F673D8A8939E2753372C3673AE6D43AC1A1C1F
-0.5.3 client from the web archive  38F4E97F5750BE226E2559F905E5BFCC7E79AA0D4EC9D51F7D147F1F0F551F3C
-0.5.3 Repack v6 client             1799003AB8ADE8D1E700AB1757AB331656DD5616D0E1DE53A0B1740E7346F715
-earlier improved client (v1)       6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84
-patched with patch v3 (update)     E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878
-first v5 release                   F7DC14C4A4CB293B12A16892C8CF032B0467C727E9E1329A5EF3EF272590B93E
-The Alpha Project Discord client   EC4347715EC31BD3C67DEC98D17530F079E0374613D8A1A73F99B0893321F6D9
-Result after patching              94036EFFB22A19D0DA9B3A493AA77B4A865CE3ADBD225180D5E6EA1709D6E4FA
-
-To see which one you have, open a command prompt in the game folder and type:
-    certutil -hashfile WoWClient.exe SHA256
+- No packed, encrypted or obfuscated content (the login-screen fallback text
+  is stored as plain text in its own section).
 
 gmod.dll
 --------
@@ -63,6 +51,8 @@ and password from the login screen to the server - without it you cannot log in 
 0.5.3 servers, and the game does not start. The patcher copies it next to
 WoWClient.exe if it is missing; an existing gmod.dll is never replaced.
 
+How to install
+---------------
 Option 1: automatic patcher (recommended)
 -----------------------------------------
 1. Unpack the zip and drop everything into the game folder (next to WoWClient.exe).
@@ -76,26 +66,44 @@ Option 1: automatic patcher (recommended)
 If Windows blocks the files: right-click each file > Properties > Unblock.
 
 Option 2: xdelta
-----------------
+-----------------
 Use the file in the xdelta folder that matches your WoWClient.exe:
     web-archive_to_patched.xdelta          web archive client
     repack-v6_to_patched.xdelta            Repack v6 client
     untouched-blizzard_to_patched.xdelta   untouched Blizzard client
-    earlier-improved-v1_to_patched.xdelta  earlier improved client (v1)
-    improved-v3_to_patched.xdelta          patched with patch v3 (update)
     enhanced-v5_to_patched.xdelta          first v5 release
-    alpha-project-discord_to_patched.xdelta  The Alpha Project Discord client
+    unknown-variant-1_to_patched.xdelta    unidentified client variant 1
+    unknown-variant-2_to_patched.xdelta    unidentified client variant 2
 With a patch program that reads xdelta/VCDIFF files (for example xdelta UI or
 Delta Patcher): source file = your WoWClient.exe, patch = the .xdelta file.
 With xdelta3 on the command line, in the game folder:
     xdelta3 -d -s WoWClient.exe web-archive_to_patched.xdelta WoWClient_patched.exe
 Then rename WoWClient.exe to WoWClient_before_patch.exe and
 WoWClient_patched.exe to WoWClient.exe. Check the result with certutil (see
-above): it must be 94036EFF...E4FA.
+below): it must be 767F08B7...EAEA7C.
+Two more clients (earlier improved client v1, patched with patch v3) and the
+Alpha Project Discord client are supported by the automatic patcher
+(Option 1) but do not yet have an xdelta file here - use Option 1 for those.
 
 Undo
 ----
 Delete WoWClient.exe and rename WoWClient_before_patch.exe to WoWClient.exe.
+
+Supported WoWClient.exe (all become the same file)
+--------------------------------------------------
+untouched Blizzard 0.5.3 client        861875776CE14A05FB49D4BB09F673D8A8939E2753372C3673AE6D43AC1A1C1F
+0.5.3 client from the web archive     38F4E97F5750BE226E2559F905E5BFCC7E79AA0D4EC9D51F7D147F1F0F551F3C
+0.5.3 Repack v6 client                1799003AB8ADE8D1E700AB1757AB331656DD5616D0E1DE53A0B1740E7346F715
+earlier improved client (v1)          6B8B5E497DFFD617DED73F7B5A69E57A91CAA73FA47895398952594174EB6C84
+patched with patch v3 (update)        E2DE2B6094F1EAF923C695F856346BB4230B45676B7730F463E05692CF8E8878
+first v5 release                      F7DC14C4A4CB293B12A16892C8CF032B0467C727E9E1329A5EF3EF272590B93E
+The Alpha Project Discord client      EC4347715EC31BD3C67DEC98D17530F079E0374613D8A1A73F99B0893321F6D9
+unidentified client variant 1         77868439C6FE23A98E572FBD5196D28C543CFB6D0B0E6E5035D00E24E030CA6A
+unidentified client variant 2         0B7E4526BFF2428C74F0A9146502E847BE3484D7856B89BBC31DFB6A97D539B2
+Result after patching                 767F08B7F62F7618FCB3AB401028701E122B3078A28C5DAD33B3BE43E4EAEA7C
+
+To see which one you have, open a command prompt in the game folder and type:
+    certutil -hashfile WoWClient.exe SHA256
 
 dgVoodoo2
 ---------
@@ -115,3 +123,6 @@ Changes
 - All own values kept in a separate memory area that nothing else can use.
 - Account name and password fields on the login screen, also with an original
   interface.MPQ.
+- The login-screen fallback data moved into its own section with ordinary
+  code/data flags, instead of a single appended cave, to avoid being flagged
+  as suspicious by antivirus heuristics.
