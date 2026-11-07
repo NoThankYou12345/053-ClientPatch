@@ -28,6 +28,7 @@ WoWClient.exe you already have into the enhanced one. Download it under
 - Crash fixes when loading maps and models.
 - Fix for the "_Tls" startup error with Nvidia drivers.
 - More usable memory (up to 4 GB instead of 2 GB, Large Address Aware).
+- Many minor fixes, can see indoor maps again for example.
 
 **Convenient**
 - Login screen with account name and password fields, also with the original
