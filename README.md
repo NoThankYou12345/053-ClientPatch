@@ -75,7 +75,7 @@ same enhanced file (SHA256 `767F08B7F62F7618FCB3AB401028701E122B3078A28C5DAD33B3
 | Unidentified client variant 2 | `0B7E4526BFF2428C74F0A9146502E847BE3484D7856B89BBC31DFB6A97D539B2` |
 
 Check yours in the game folder with `certutil -hashfile WoWClient.exe SHA256`.
-If your particular WoWclient.exe is not in this list, you can make an "issue",
+If your particular WoWclient.exe is not in this list, you can make an "issue",  
 tell me where you got it, and I will add it to the patcher.
 
 ## Laggy game or graphics errors? Use dgVoodoo2
