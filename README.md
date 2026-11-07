@@ -48,8 +48,9 @@ WoWClient.exe you already have into the enhanced one. Download it under
 2. Copy `patch.bat`, `patch.ps1` and `gmod.dll` into your WoW 0.5.3 folder (next to WoWClient.exe).
 3. Double-click `patch.bat`. It checks your file, keeps a backup
    (`WoWClient_before_patch.exe`), patches it and checks the result.
+It is recommended to also add the D3D9.dll and dgVoodoo.conf in the same folder for improved performance.
 
-Or use the matching `.xdelta` file with xdelta UI, Delta Patcher or xdelta3.
+Alternatively, use the matching `.xdelta` file with xdelta UI, Delta Patcher or xdelta3.
 Full instructions, undo and details are in `ClientPatch_README.txt`.
 
 **gmod.dll is needed.** gmod.dll (by rajkosto) is included with permission. It sends
